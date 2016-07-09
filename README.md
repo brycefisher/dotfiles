@@ -8,5 +8,7 @@ Objectives:
 Bootstrapping:
 
 ```
+git clone git@github.com:brycefisher/dotfiles.git
+cd dotfiles
 ./setup.sh
 ```
