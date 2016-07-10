@@ -1,13 +1,22 @@
-[push]
-	default = simple
 [user]
 	name = Bryce Fisher-Fleig
 	email = hckr1292@gmail.com
-[credential]
-	helper = osxkeychain
+[push]
+	default = simple
 [alias]
 	ch = checkout
 	co = commit
 	st = status
 	b = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[diff]
+	algorithm = histogram
+[merge]
+	tool = p4mergetool
+[mergetool]
+	keepBackup = false
+[mergetool "p4mergetool"]
+	cmd = "/Applications/p4merge.app/Contents/Resources/launchp4merge $BASE $REMOTE $LOCAL $MERGED"
+	trustExitCode = false
+[credential]
+	helper = osxkeychain
