@@ -5,9 +5,14 @@ if [ ! -f "$(pwd)/git-completion.bash" ]; then
 	curl -sSO https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 fi
 
-echo 'Ensuring the bashrc file in this directory is always sourced in .bashrc'
-SOURCE_BASHRC="source $(pwd)/bashrc"
-grep -q "$SOURCE_BASHRC" "$HOME/.profile" || echo "$SOURCE_BASHRC" >> "$HOME/.profile"
+if [ ! -f "$(pwd)/git-prompt.sh" ]; then
+	echo 'Downloading git script for shell prompt'
+	curl -sSO https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+fi
+
+echo 'Ensuring the profile file in this directory is always sourced in .profile'
+SOURCE_PROFILE="source $(pwd)/profile"
+grep -q "$SOURCE_PROFILE" "$HOME/.profile" || echo "$SOURCE_PROFILE" >> "$HOME/.profile"
 
 echo 'Symlink git configuration'
 rm -f "$HOME/.gitconfig"

@@ -4,11 +4,18 @@ DOTFILE_DIR=$(dirname $BASH_SOURCE)
 
 # Setup git autocompletions in bash
 source "$DOTFILE_DIR/git-completion.bash"
+source "$DOTFILE_DIR/git-prompt.sh"
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+export GIT_PS1_SHOWUPSTREAM="auto"
+export PS1='\W$(__git_ps1 " (%s)") \$ '
 
 # Setup aliases I like
 alias cdg='cd $HOME/Projects/garbanzo'
 alias g='git'
 alias vim='nvim'
+alias ls='ls -lah'
 
 # Makefile completions
 # From http://stackoverflow.com/questions/33760647/makefile-autocompletion-on-mac/36044470#36044470
