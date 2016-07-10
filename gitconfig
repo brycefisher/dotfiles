@@ -1,0 +1,13 @@
+[push]
+	default = simple
+[user]
+	name = Bryce Fisher-Fleig
+	email = hckr1292@gmail.com
+[credential]
+	helper = osxkeychain
+[alias]
+	ch = checkout
+	co = commit
+	st = status
+	b = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
