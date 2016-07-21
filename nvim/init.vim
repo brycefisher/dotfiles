@@ -8,9 +8,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'chriskempson/base16-vim'
+Plugin 'kchmck/vim-coffee-script'
 
 " End plugins here
 call vundle#end()
+syntax enable
 filetype plugin indent on
 " Brief help
 " :PluginList       - lists configured plugins
