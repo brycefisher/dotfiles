@@ -17,3 +17,12 @@ grep -q "$SOURCE_PROFILE" "$HOME/.profile" || echo "$SOURCE_PROFILE" >> "$HOME/.
 echo 'Symlink git configuration'
 rm -f "$HOME/.gitconfig"
 ln -s "$(pwd)/gitconfig" "$HOME/.gitconfig"
+
+if [ ! -d "$(pwd)/nvim/bundle/Vundle.vim" ]; then
+	echo 'Cloning vim plugin manager (Vundle)'
+	mkdir -p "$(pwd)/nvim/bundle/"
+	git clone https://github.com/VundleVim/Vundle.vim.git "$(pwd)/nvim/bundle/Vundle.vim"
+fi
+
+echo 'Symlink neovim configuration'
+ln -s "$(pwd)/nvim" "$HOME/.config/nvim" # FIXME - OSX specific
