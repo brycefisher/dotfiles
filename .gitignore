@@ -2,3 +2,4 @@ git-completion.bash
 git-prompt.sh
 nvim/.netrwhist
 nvim/bundle
+nvim/nvim
