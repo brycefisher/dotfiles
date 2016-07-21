@@ -24,5 +24,11 @@ if [ ! -d "$(pwd)/nvim/bundle/Vundle.vim" ]; then
 	git clone https://github.com/VundleVim/Vundle.vim.git "$(pwd)/nvim/bundle/Vundle.vim"
 fi
 
+if [ ! -d "$(pwd)/base16-iterm2" ]; then
+	echo 'Cloning base16 color scheme for iterm2'
+	git clone https://github.com/chriskempson/base16-iterm2.git ~/base16-iterm2
+fi
+
 echo 'Symlink neovim configuration'
+rm -rf "$HOME/.config/nvim" # FIXME - OSX specific
 ln -s "$(pwd)/nvim" "$HOME/.config/nvim" # FIXME - OSX specific
