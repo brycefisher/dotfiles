@@ -24,9 +24,15 @@ if [ ! -d "$(pwd)/nvim/bundle/Vundle.vim" ]; then
 	git clone https://github.com/VundleVim/Vundle.vim.git "$(pwd)/nvim/bundle/Vundle.vim"
 fi
 
-if [ ! -d "$(pwd)/base16-iterm2" ]; then
+if [ ! -d "$HOME/base16-iterm2" ]; then
 	echo 'Cloning base16 color scheme for iterm2'
 	git clone https://github.com/chriskempson/base16-iterm2.git ~/base16-iterm2
+fi
+
+if [ ! -d "$HOME/powerline-fonts" ]; then
+	echo 'Cloning special fonts for use with Neovim airline plugin'
+	git clone https://github.com/powerline/fonts.git "$HOME/powerline-fonts"
+	"$HOME/powerline-fonts/install.sh"
 fi
 
 echo 'Symlink neovim configuration'

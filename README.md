@@ -19,3 +19,9 @@ git clone git@github.com:brycefisher/dotfiles.git
 cd dotfiles
 ./setup.sh
 ```
+
+
+TODOS:
+
+ * [ ] - add base16 to iTerm2. For now, manual step
+ * [ ] - add powerline font (preferred, patched Source Code Pro) to iTerm2. For now manual step

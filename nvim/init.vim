@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'chriskempson/base16-vim'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'vim-airline/vim-airline'
 
 " End plugins here
 call vundle#end()
@@ -31,3 +32,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Colorscheme
 colorscheme base16-default-dark
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
