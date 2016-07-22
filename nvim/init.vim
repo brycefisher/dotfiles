@@ -12,6 +12,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-airline/vim-airline'
 Plugin 'neomake/neomake'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 
 " End plugins here
 call vundle#end()
@@ -44,3 +45,6 @@ autocmd! BufWritePost * Neomake
 
 " Vim-GitGutter
 set updatetime=250
+
+" Fugitive
+" TODO: Add branch name to airline
