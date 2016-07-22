@@ -37,7 +37,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 colorscheme base16-default-dark
 
 " Airline
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " Neomake
@@ -48,3 +47,37 @@ set updatetime=250
 
 " Fugitive
 " TODO: Add branch name to airline
+
+" Disable backups
+noswapfile
+set nobackup
+set nowritebackup
+
+" Set pwd to same dir as currently selected buffer
+set autochdir
+
+" Various Interface options
+set nu
+set nowrap
+set list listchars=tab:→\ ,trail:·
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
+"set enc=utf-8 "Default to UTF8
+set fo=tcrq
+set showmode
+set showcmd
+set hlsearch
+set cursorline
+
+" Terminal Mode
+:tnoremap <Esc> <C-\><C-n>
+:tnoremap <C-h> <C-\><C-n><C-w>h
+:tnoremap <C-j> <C-\><C-n><C-w>j
+:tnoremap <C-k> <C-\><C-n><C-w>k
+:tnoremap <C-l> <C-\><C-n><C-w>l
+":nnoremap <C-h> <C-w>h
+:nnoremap <C-j> <C-w>j
+:nnoremap <C-k> <C-w>k
+:nnoremap <C-l> <C-w>l
