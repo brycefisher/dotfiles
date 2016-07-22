@@ -11,6 +11,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-airline/vim-airline'
 Plugin 'neomake/neomake'
+Plugin 'airblade/vim-gitgutter'
 
 " End plugins here
 call vundle#end()
@@ -40,3 +41,6 @@ let g:airline_powerline_fonts = 1
 
 " Neomake
 autocmd! BufWritePost * Neomake
+
+" Vim-GitGutter
+set updatetime=250
