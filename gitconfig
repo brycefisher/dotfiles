@@ -3,6 +3,7 @@
 	email = hckr1292@gmail.com
 [push]
 	default = simple
+	followTags = true
 [alias]
 	ch = checkout
 	co = commit
