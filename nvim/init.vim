@@ -13,6 +13,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'neomake/neomake'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
+Plugin 'epmatsw/ag.vim'
 
 " End plugins here
 call vundle#end()
