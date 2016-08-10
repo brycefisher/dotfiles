@@ -52,7 +52,7 @@ set updatetime=250
 " TODO: Add branch name to airline
 
 " Disable backups
-noswapfile
+set noswapfile
 set nobackup
 set nowritebackup
 
