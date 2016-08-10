@@ -49,9 +49,6 @@ autocmd! BufWritePost * Neomake
 " Vim-GitGutter
 set updatetime=250
 
-" Fugitive
-" TODO: Add branch name to airline
-
 " Disable backups
 set noswapfile
 set nobackup
