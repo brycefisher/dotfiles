@@ -14,6 +14,7 @@ Plugin 'neomake/neomake'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'epmatsw/ag.vim'
+Plugin 'Shougo/unite.vim'
 
 " End plugins here
 call vundle#end()
