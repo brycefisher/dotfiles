@@ -15,6 +15,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'epmatsw/ag.vim'
 Plugin 'Shougo/unite.vim'
+Plugin 'wavded/vim-stylus'
 
 " End plugins here
 call vundle#end()
@@ -82,3 +83,7 @@ set cursorline
 :nnoremap <C-j> <C-w>j
 :nnoremap <C-k> <C-w>k
 :nnoremap <C-l> <C-w>l
+
+" Stylus filetype detection (not working in plugin :| )
+autocmd BufNewFile,BufReadPost *.styl set filetype=stylus
+autocmd BufNewFile,BufReadPost *.stylus set filetype=stylus
