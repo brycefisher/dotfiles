@@ -10,12 +10,13 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'chriskempson/base16-vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-airline/vim-airline'
-Plugin 'neomake/neomake'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'epmatsw/ag.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'wavded/vim-stylus'
+Plugin 'Shougo/neoyank.vim'
+Plugin 'neomake/neomake'
 
 " End plugins here
 call vundle#end()
@@ -93,3 +94,4 @@ autocmd BufNewFile,BufReadPost *.stylus set filetype=stylus
 " Unite
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 nnoremap <leader><Space> :<C-u>Unite -start-insert file_rec<CR>
+nnoremap <leader>y :<C-u>Unite -buffer-name=yank history/yank<cr>
