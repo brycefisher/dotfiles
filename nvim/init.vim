@@ -60,6 +60,7 @@ set nowritebackup
 set autochdir
 
 " Various Interface options
+let mapleader=','
 set nu
 set nowrap
 set list listchars=tab:→\ ,trail:·
@@ -88,3 +89,7 @@ set cursorline
 " Stylus filetype detection (not working in plugin :| )
 autocmd BufNewFile,BufReadPost *.styl set filetype=stylus
 autocmd BufNewFile,BufReadPost *.stylus set filetype=stylus
+
+" Unite
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader><Space> :<C-u>Unite -start-insert file_rec<CR>
