@@ -2104,11 +2104,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>382 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1709 -325 796 473 1440 -540 2560 1417 </string>
+	<string>2311 404 796 473 1440 -540 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 448 570 427 0 0 1440 877 </string>
+	<string>251 2 689 827 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>302 337 570 427 0 0 1440 877 </string>
+	<string>737 255 570 427 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 0 1385 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -2248,12 +2248,16 @@
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.15170273184776306</real>
+				<real>0.81182152032852173</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.11783610284328461</real>
+				<real>0.65421253442764282</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.1975812166929245</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -2802,7 +2806,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-08-09T16:27:54Z</date>
+	<date>2016-08-10T23:32:26Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
