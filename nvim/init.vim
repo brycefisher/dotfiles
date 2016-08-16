@@ -57,9 +57,6 @@ set noswapfile
 set nobackup
 set nowritebackup
 
-" Set pwd to same dir as currently selected buffer
-set autochdir
-
 " Various Interface options
 let mapleader=','
 set nu
