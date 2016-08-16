@@ -93,5 +93,5 @@ autocmd BufNewFile,BufReadPost *.stylus set filetype=stylus
 
 " Unite
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader><Space> :<C-u>Unite -start-insert file_rec<CR>
+nnoremap <leader><Space> :<C-u>Unite -start-insert file_rec/neovim<CR>
 nnoremap <leader>y :<C-u>Unite -buffer-name=yank history/yank<cr>
