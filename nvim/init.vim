@@ -61,6 +61,7 @@ set nowritebackup
 let mapleader=','
 set nu
 set nowrap
+set rnu
 set list listchars=tab:→\ ,trail:·
 set smartindent
 set tabstop=2
