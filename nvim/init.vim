@@ -30,7 +30,6 @@ filetype plugin indent on
 "
 " see :h vundle for more details or wiki for FAQ
 
-
 " NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
@@ -57,39 +56,67 @@ set noswapfile
 set nobackup
 set nowritebackup
 
+let mapleader="\<SPACE>" " Map the leader key to SPACE for easy two hand access to leader key
+
+" Eliminate the need to press SHIFT for commands
+nnoremap ; :
+
 " Various Interface options
-let mapleader=','
-set nu
-set nowrap
-set rnu
-set list listchars=tab:→\ ,trail:·
-set smartindent
-set tabstop=2
-set shiftwidth=2
-set expandtab
-"set enc=utf-8 "Default to UTF8
+set number                           " Show line numbers on the left
+set nowrap                           " Don't wrap lines
+set ruler                            " Show the current row and column
+set list listchars=tab:→\ ,trail:·   " Show tab and trailing whitespace characters
+set showmode                         " Show current mode
+set showcmd                          " Show (partial) command in status line
+set cursorline                       " Highlight the currently active line
+
+" Relative numbering
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set nornu
+    set number
+  else
+    set rnu
+  endif
+endfunc
+
+" Toggle between normal and relative numbering.
+nnoremap <leader>r :call NumberToggle()<cr>
+
+" Whitespace formatting
+set smartindent        " Try to keep indenting the newlines based on syntax and context
+set tabstop=2          " 1 TAB = 2 spaces
+set shiftwidth=2       " ... same as above, don't understand the difference
+set expandtab          " Insert spaces when pressing the TAB key
+set nojoinspaces       " No spaces after joining lines
 set fo=tcrq
-set showmode
-set showcmd
-set hlsearch
-set cursorline
+
+" Searching options
+set hlsearch         " Highlight search results
+set gdefault         " Add the 'global' (/g) replacement by default
+set ignorecase       " Make searching case sensitive normally
+set smartcase        " ... unless the query has capital letters.
+set incsearch        " Incremental search
+
+" Use <SPACE>c to clear the highlighting of :set hlsearch.
+nnoremap <leader>c :nohlsearch<CR>
 
 " Terminal Mode
-:tnoremap <Esc> <C-\><C-n>
-:tnoremap <C-h> <C-\><C-n><C-w>h
-:tnoremap <C-j> <C-\><C-n><C-w>j
-:tnoremap <C-k> <C-\><C-n><C-w>k
-:tnoremap <C-l> <C-\><C-n><C-w>l
+:tnoremap <Esc> <C-\><C-n>         " ESC switches back to normal mode when in a terminal buffer
+:tnoremap <C-h> <C-\><C-n><C-w>h   " CTRL-h in terminal mode moves left a pane
+:tnoremap <C-j> <C-\><C-n><C-w>j   " CTRL-j in terminal mode moves down a pane
+:tnoremap <C-k> <C-\><C-n><C-w>k   " CTRL-k in terminal mode moves up a pane
+:tnoremap <C-l> <C-\><C-n><C-w>l   " CTRL-l in terminal mode moves right a pane
 ":nnoremap <C-h> <C-w>h
 :nnoremap <C-j> <C-w>j
 :nnoremap <C-k> <C-w>k
 :nnoremap <C-l> <C-w>l
 
 " Stylus filetype detection (not working in plugin :| )
-autocmd BufNewFile,BufReadPost *.styl set filetype=stylus
-autocmd BufNewFile,BufReadPost *.stylus set filetype=stylus
+autocmd BufNewFile,BufReadPost *.styl set filetype=stylus    " When creating, opening or reopening a .styl file, trigger style syntax highlighting
+autocmd BufNewFile,BufReadPost *.stylus set filetype=stylus  " When creating, opening or reopening a .styl file, trigger style syntax highlighting
 
 " Unite
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader><Space> :<C-u>Unite -start-insert file_rec/neovim<CR>
+nnoremap <leader>f :<C-u>Unite -start-insert file_rec/neovim<CR>
 nnoremap <leader>y :<C-u>Unite -buffer-name=yank history/yank<cr>
