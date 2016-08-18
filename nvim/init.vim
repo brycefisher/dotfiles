@@ -17,6 +17,7 @@ Plugin 'Shougo/unite.vim'
 Plugin 'wavded/vim-stylus'
 Plugin 'Shougo/neoyank.vim'
 Plugin 'neomake/neomake'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " End plugins here
 call vundle#end()
@@ -120,3 +121,6 @@ autocmd BufNewFile,BufReadPost *.stylus set filetype=stylus  " When creating, op
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 nnoremap <leader>f :<C-u>Unite -start-insert file_rec/neovim<CR>
 nnoremap <leader>y :<C-u>Unite -buffer-name=yank history/yank<cr>
+
+" CtrlP
+nnoremap <leader>b :CtrlPMixed<CR>
