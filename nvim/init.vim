@@ -31,9 +31,11 @@ filetype plugin indent on
 "
 " see :h vundle for more details or wiki for FAQ
 
+let mapleader="\<SPACE>" " Map the leader key to SPACE for easy two hand access to leader key
+
 " NERDTree
-nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>s :NERDTreeFind<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -56,8 +58,6 @@ set updatetime=250
 set noswapfile
 set nobackup
 set nowritebackup
-
-let mapleader="\<SPACE>" " Map the leader key to SPACE for easy two hand access to leader key
 
 " Eliminate the need to press SHIFT for commands
 nnoremap ; :
@@ -102,6 +102,9 @@ set incsearch        " Incremental search
 " Use <SPACE>c to clear the highlighting of :set hlsearch.
 nnoremap <leader>c :nohlsearch<CR>
 
+" Use <SPACE>a to trigger Ag
+nnoremap <leader>a :Ag<SPACE>
+
 " Terminal Mode
 :tnoremap <Esc> <C-\><C-n>         " ESC switches back to normal mode when in a terminal buffer
 :tnoremap <C-h> <C-\><C-n><C-w>h   " CTRL-h in terminal mode moves left a pane
@@ -118,9 +121,12 @@ autocmd BufNewFile,BufReadPost *.styl set filetype=stylus    " When creating, op
 autocmd BufNewFile,BufReadPost *.stylus set filetype=stylus  " When creating, opening or reopening a .styl file, trigger style syntax highlighting
 
 " Unite
+" TODO - consider removing this?
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>f :<C-u>Unite -start-insert file_rec/neovim<CR>
 nnoremap <leader>y :<C-u>Unite -buffer-name=yank history/yank<cr>
 
-" CtrlP
-nnoremap <leader>b :CtrlPMixed<CR>
+" CtrlP - search buffers and cached files simultaneously with SPACE + p
+nnoremap <leader>p :CtrlPMixed<CR>
+let g:ctrlp_custom_ignore = {
+  \  'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|tmp|logs)$',
+  \ } " Ignore node_modules
