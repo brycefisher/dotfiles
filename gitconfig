@@ -21,3 +21,5 @@
 	trustExitCode = false
 [credential]
 	helper = osxkeychain
+[core]
+	editor = nvim
