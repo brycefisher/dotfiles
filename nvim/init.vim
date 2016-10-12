@@ -105,6 +105,9 @@ nnoremap <leader>c :nohlsearch<CR>
 " Use <SPACE>a to trigger Ag
 nnoremap <leader>a :Ag<SPACE>
 
+" Use <SPACE>q to close the quickfix window
+nnoremap <leader>q :ccl<CR>
+
 " Terminal Mode
 :tnoremap <Esc> <C-\><C-n>         " ESC switches back to normal mode when in a terminal buffer
 :tnoremap <C-h> <C-\><C-n><C-w>h   " CTRL-h in terminal mode moves left a pane
