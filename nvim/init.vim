@@ -84,14 +84,6 @@ endfunc
 " Toggle between normal and relative numbering.
 nnoremap <leader>r :call NumberToggle()<cr>
 
-" Whitespace formatting
-set smartindent        " Try to keep indenting the newlines based on syntax and context
-set tabstop=2          " 1 TAB = 2 spaces
-set shiftwidth=2       " ... same as above, don't understand the difference
-set expandtab          " Insert spaces when pressing the TAB key
-set nojoinspaces       " No spaces after joining lines
-set fo=tcrq
-
 " Searching options
 set hlsearch         " Highlight search results
 set gdefault         " Add the 'global' (/g) replacement by default
@@ -133,3 +125,11 @@ nnoremap <leader>p :CtrlPMixed<CR>
 let g:ctrlp_custom_ignore = {
   \  'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|tmp|logs)$',
   \ } " Ignore node_modules
+
+" Whitespace formatting
+set smartindent        " Try to keep indenting the newlines based on syntax and context
+set tabstop=2          " 1 TAB = 2 spaces
+set shiftwidth=2       " ... same as above, don't understand the difference
+set expandtab          " Insert spaces when pressing the TAB key
+set nojoinspaces       " No spaces after joining lines
+set fo=tcrq
