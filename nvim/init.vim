@@ -43,13 +43,14 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['.git$[[dir]]', 'node_modules$[[dir]]', 'newrelic_agent.log', '.githooks$[[dir]]', 'build$[[dir]]', 'lib$[[dir]]', '.coffee$[[dir]]', 'tmp$[[dir]]']
 
 " Colorscheme
-colorscheme base16-default-dark
+"colorscheme base16-default-dark
 
 " Airline
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 
 " Neomake
 autocmd! BufWritePost * Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 " Vim-GitGutter
 set updatetime=250
