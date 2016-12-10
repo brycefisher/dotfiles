@@ -42,11 +42,17 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['.git$[[dir]]', 'node_modules$[[dir]]', 'newrelic_agent.log', '.githooks$[[dir]]', 'build$[[dir]]', 'lib$[[dir]]', '.coffee$[[dir]]', 'tmp$[[dir]]']
 
-" Colorscheme
-colorscheme base16-default-dark
+" Detect linux
+let g:os = substitute(system('uname'), '\n', '', '')
 
-" Airline
-let g:airline_powerline_fonts = 1
+" Mac OS specific config
+if g:os != 'Linux'
+  " Colorscheme
+  colorscheme base16-default-dark
+
+  " Airline
+  let g:airline_powerline_fonts = 1
+endif
 
 " Neomake
 autocmd! BufWritePost * Neomake
