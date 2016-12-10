@@ -27,6 +27,8 @@ function configure_neovim() {
   echo 'Replacing existing neovim configuration with symlink'
   rm -rf "$HOME/.config/nvim"
   ln -s "$(pwd)/nvim" "$HOME/.config/nvim"
+
+  echo 'Make sure you run :PluginInstall inside nvim when you start it next time'
 }
 
 function setup_mac_os() {
