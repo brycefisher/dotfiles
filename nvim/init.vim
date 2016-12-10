@@ -18,6 +18,7 @@ Plugin 'wavded/vim-stylus'
 Plugin 'Shougo/neoyank.vim'
 Plugin 'neomake/neomake'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'rust-lang/rust.vim'
 
 " End plugins here
 call vundle#end()
@@ -139,3 +140,6 @@ set shiftwidth=2       " ... same as above, don't understand the difference
 set expandtab          " Insert spaces when pressing the TAB key
 set nojoinspaces       " No spaces after joining lines
 set fo=tcrq
+
+" Rust
+let g:rustfmt_autosave = 1
